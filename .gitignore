@@ -1,0 +1,94 @@
+# Gitignore for a project with .NET backend and Angular frontend
+
+# --- .NET Backend Exclusions ---
+# Binaries and object files
+[Bb]in/
+[Oo]bj/
+
+# Package manager files
+*.lock.json
+*.nuget.g.props
+*.nuget.g.targets
+
+# User-specific files
+*.user
+*.suo
+*.vssscc
+*.vspscc
+*.vsscc
+*.pdb # Program Debug Database files (can be large, often not needed in source control)
+*.dll # Dynamic Link Libraries (build output)
+*.exe # Executables (build output)
+
+# Test results
+TestResults/
+
+# Build results
+artifacts/
+
+# Rider
+.idea/
+
+# VS Code (backend specific settings if any)
+.vscode/launch.json # Often user-specific launch configs
+.vscode/tasks.json  # Often user-specific task configs
+
+# --- Angular Frontend Exclusions ---
+# Dependency directories
+node_modules/
+
+# Compiled output
+dist/
+.angular/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/ # VS Code settings (can be shared, but some files like settings.json might be user-specific)
+.idea/   # IntelliJ/WebStorm
+
+# Environment files (sensitive information)
+# Be cautious with environment files, especially in production!
+# If you have different environment files (e.g., environment.prod.ts, environment.dev.ts),
+# you might only want to ignore the one containing sensitive production keys.
+# Consider using environment variables or a separate configuration management system
+# for sensitive production settings instead of committing them.
+src/environments/*.ts
+!src/environments/environment.ts # Keep the base environment file
+!src/environments/environment.prod.ts # Keep the production environment file (if it doesn't contain secrets)
+
+# Unit test coverage
+coverage/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# E2E test output
+e2e/**/*.js
+e2e/**/*.map
+
+# --- General Exclusions ---
+# Package-lock files (if you use yarn, you might ignore package-lock.json and keep yarn.lock)
+package-lock.json
+
+# Dotenv files (used for environment variables, often contain secrets)
+.env
+.env.*
+!.env.example # Keep an example file without secrets
+
+# Other common temporary or generated files
+*.log
+*.tmp
+*.swp
+
+# Add any other specific files or folders you want to ignore here
+# For example, if you have a specific uploads folder locally:
+# uploads/

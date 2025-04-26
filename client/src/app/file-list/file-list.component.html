@@ -1,0 +1,25 @@
+<h2>File List</h2>
+
+<div *ngIf="files.length > 0">
+  <table>
+    <thead>
+      <tr>
+        <th>File Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let file of files">
+        <td>{{ file.name }}</td>
+        <td>
+          <button (click)="downloadFile(file.name)">Download</button>
+          <button (click)="deleteFile(file.name)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="files.length === 0">
+  <p>No files found.</p>
+</div>
