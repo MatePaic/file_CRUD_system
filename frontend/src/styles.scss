@@ -1,0 +1,8 @@
+@use "bootstrap/scss/bootstrap" as bs;  // Modern Sass syntax
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1200;
+  }
+  

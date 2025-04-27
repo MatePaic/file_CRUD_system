@@ -1,0 +1,25 @@
+<div class="mt-4">
+  <h4>Uploaded Files</h4>
+  <div class="list-group mt-2">
+    <!-- Show list if files exist and aren't empty -->
+    <ng-container *ngIf="files && files.length > 0">
+      <app-file-item 
+        *ngFor="let file of files;"
+        [file]="file" 
+        (deleted)="loadFiles()">
+      </app-file-item>
+    </ng-container>
+
+    <!-- Show empty message only when array is explicitly empty -->
+    <div *ngIf="files && files.length === 0" class="alert alert-info">
+      No files uploaded yet
+    </div>
+
+    <!-- Optional: Show loading state -->
+    <div *ngIf="!files" class="text-center my-4">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>

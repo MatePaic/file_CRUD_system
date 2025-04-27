@@ -1,0 +1,19 @@
+<div class="mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Upload File</h5>
+        <div class="input-group">
+          <input type="file" class="form-control" (change)="onFileSelected($event)">
+          <button class="btn btn-primary" 
+                  type="button" 
+                  [disabled]="!selectedFile"
+                  (click)="uploadFile()">
+            Upload
+          </button>
+        </div>
+        <small *ngIf="selectedFile" class="form-text text-muted mt-2">
+          Selected file: {{ selectedFile.name }}
+        </small>
+      </div>
+    </div>
+</div>
